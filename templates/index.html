@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="border: 1px solid #ccc; padding: 20px; background-color: #f5f5f5;">
+    <h1 style="text-align: center; color: #333; margin-top: 0; margin-bottom: 30px;">{% block title %}Participants:{% endblock %}</h1>
+    {% for message in messages %}
+      <div style="border: 1px solid #ccc; padding: 20px; margin-bottom: 20px;">
+        <h3 style="margin-top: 0; margin-bottom: 10px; font-size: 24px; color: #333;">{{ message['Nom_Prenom'] }}</h3>
+        <p style="margin-top: 0; margin-bottom: 0; font-size: 18px; color: #555;">Revenu mensuel: {{ message['Revenu'] }}</p>
+        <p style="margin-top: 0; margin-bottom: 0; font-size: 18px; color: #555;">Réponse de ChatGPT: {{ message['gptresponse'] }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
