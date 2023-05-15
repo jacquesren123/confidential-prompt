@@ -9,5 +9,12 @@ COPY . .
 
 EXPOSE 5000
 
+
+# Copy the binary file to the working directory
+COPY AttestationClient /app/AttestationClient
+
+# Set the binary file as executable
+RUN chmod +x /app/AttestationClient
+
 ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]
