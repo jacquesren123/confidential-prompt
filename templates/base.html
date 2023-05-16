@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,39 +79,19 @@
             line-height: 1.5;
         }
 
-        /* New Tab Styles */
-        .new-tab {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .new-tab a {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: var(--primary-color);
-            border-radius: 5px;
-        }
     </style>
 </head>
-
 <body>
     <nav>
         <a href="{{ url_for('index') }}">Accueil</a>
         <a href="{{ url_for('create') }}">Inscription</a>
-        <div class="new-tab">
-            <a href="{{ url_for('launch_attestation') }}">Get Attestation</a>
-        </div>
+        <a href="{{ url_for('attestation') }}">Attestation</a>
     </nav>
     <div class="content">
         {% for message in get_flashed_messages() %}
-        <div class="alert">{{ message }}</div>
+            <div class="alert">{{ message }}</div>
         {% endfor %}
         {% block content %} {% endblock %}
     </div>
 </body>
-
 </html>
