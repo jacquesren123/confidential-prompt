@@ -5,3 +5,4 @@ azure.keyvault.secrets
 azure.identity
 azure.keyvault.keys
 python-dotenv
+pytest
